@@ -1,7 +1,9 @@
 #include <stdio.h>
+
 int main() {
-    char str[101];
-    scanf(" %[^\n]", str);
-    printf("%s\n", str);
+    char input[101]; 
+    scanf("%[^\n]", input);
+    printf("%s\n", input);
+
     return 0;
 }
