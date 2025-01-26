@@ -15,7 +15,6 @@ int main() {
     getchar(); 
     fgets(field, sizeof(field), stdin); 
     scanf("%s", field_code); 
-    printf("Enter Class number: ");
     scanf("%d", &class_number);  
     scanf("%s", generation);  
     scanf("%f", &gpa);  
