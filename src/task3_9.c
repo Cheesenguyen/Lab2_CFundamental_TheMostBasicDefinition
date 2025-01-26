@@ -1,18 +1,34 @@
 #include <stdio.h>
+
 int main() {
-    char name[31], field[151], field_code[6], generation[4];
-    int id, class_num;
+    char name[31];
+    char field[151];
+    char field_code[6], generation[4];
+    int id, class_number;
     char dob[11];
     float gpa;
 
-    scanf("%30[^\n]\n%d\n%10[^\n]\n%150[^\n]\n%5s\n%d\n%3s\n%f", 
-          name, &id, dob, field, field_code, &class_num, generation, &gpa);
+    // Nhập thông tin
+    fgets(name, sizeof(name), stdin); 
+    scanf("%d", &id);  
+    scanf("%s", dob); 
+    getchar(); 
+    fgets(field, sizeof(field), stdin); 
+    scanf("%s", field_code); 
+    printf("Enter Class number: ");
+    scanf("%d", &class_number);  
+    scanf("%s", generation);  
+    scanf("%f", &gpa);  
 
-    printf("Name: %s\n", name);
+    // In kết quả theo định dạng yêu cầu
+    printf("\nName: %s", name);
     printf("ID: %d\n", id);
-    printf("Date of birth: %s\n", dob);
-    printf("Field: %s\n", field);
-    printf("Class: %s-%02d - %s\n", field_code, class_num, generation);
+    
+    // Hiển thị ngày tháng năm sinh theo định dạng dd/mm/yyyy
+    printf("Date of birth: %.2s/%.2s/%.4s\n", dob, dob + 3, dob + 6);
+
+    printf("Field: %s", field);
+    printf("Class: %s-%02d - %s\n", field_code, class_number, generation);
     printf("GPA: %.2f\n", gpa);
 
     return 0;
