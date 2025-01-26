@@ -1,7 +1,8 @@
 #include <stdio.h>
+
 int main() {
-    float num;
-    scanf("%f", &num);
-    printf("%.6f\n", num);
+    double number;
+    scanf("%lf", &number);
+    printf("%.6g\n", number);
     return 0;
 }
