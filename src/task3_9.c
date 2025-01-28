@@ -8,22 +8,21 @@ int main() {
     char dob[11];
     float gpa;
 
-    // Nhập thông tin
     fgets(name, sizeof(name), stdin); 
-    scanf("%d", &id);  
+    scanf("%d", &id); 
     scanf("%s", dob); 
-    getchar(); 
+    getchar();  
     fgets(field, sizeof(field), stdin); 
-    scanf("%s", field_code); 
+
+    scanf("%s", field_code);  
     scanf("%d", &class_number);  
     scanf("%s", generation);  
     scanf("%f", &gpa);  
 
     // In kết quả theo định dạng yêu cầu
-    printf("\nName: %s", name);
+    printf("Name: %s", name);
     printf("ID: %d\n", id);
-    
-    // Hiển thị ngày tháng năm sinh theo định dạng dd/mm/yyyy
+
     printf("Date of birth: %.2s/%.2s/%.4s\n", dob, dob + 3, dob + 6);
 
     printf("Field: %s", field);
