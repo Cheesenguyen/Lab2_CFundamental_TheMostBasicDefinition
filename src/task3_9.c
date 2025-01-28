@@ -1,30 +1,34 @@
 #include <stdio.h>
 
-// Hàm in ký tự lặp lại
-void print_line(char ch, int length) {
-    for (int i = 0; i < length; i++) {
-        putchar(ch);
-    }
-    putchar('\n');
-}
-
 int main() {
-    // In phần tiêu đề với đường kẻ
-    print_line('=', 40);
-    printf("%25s\n", "FILE REPORT");
-    print_line('=', 40);
+    char name[31];
+    char field[151];
+    char field_code[6], generation[4];
+    int id, class_number;
+    char dob[11];
+    float gpa;
 
-    // In các thông tin còn lại
-    printf("%-20s%s\n", "File address:", "3F5E83");
-    printf("%-20s%s\n", "Path:", "C:\\User\\Administrator\\Downloads\\file.txt");
-    printf("%-20s\"%s\"\n", "Content:", "Hello World!");
-    printf("%-20s%s\n", "Author:", "Tran Quang Huy");
-    printf("%-20s%s\n", "Size:", "4KB");
+    fgets(name, sizeof(name), stdin); 
+    scanf("%d", &id); 
+    scanf("%s", dob); 
 
-    // Metadata
-    printf("\nMetadata:\n");
-    printf("%-20s%s\n", "Date created:", "19/03/2024");
-    printf("%-20s%s\n", "Date modified:", "20/03/2024");
+    getchar();  
+    fgets(field, sizeof(field), stdin); 
+
+    scanf("%s", field_code);  
+    scanf("%d", &class_number);  
+    scanf("%s", generation);  
+    scanf("%f", &gpa);  
+
+    // In kết quả theo định dạng yêu cầu
+    printf("Name: %s", name);
+    printf("ID: %d\n", id);
+
+    printf("Date of birth: %.2s/%.2s/%.4s\n", dob, dob + 3, dob + 6);
+
+    printf("Field: %s", field);
+    printf("Class: %s-%02d - %s\n", field_code, class_number, generation);
+    printf("GPA: %.2f\n", gpa);
 
     return 0;
 }
